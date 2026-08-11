@@ -1,7 +1,4 @@
-// =========================================================
-// DATOS DE PROYECTOS
-// Edita esta lista: agrega tu link de GitHub real, demo (opcional)
-// y la ruta a la captura en assets/projects/ para cada proyecto.
+
 // =========================================================
 const PROJECTS = [
   {
@@ -201,12 +198,11 @@ function initMobileMenu(){
   toggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("topbar__nav--open");
     toggle.setAttribute("aria-expanded", String(isOpen));
-    nav.style.display = isOpen ? "flex" : "none";
   });
 
   nav.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
-      nav.style.display = "none";
+      nav.classList.remove("topbar__nav--open");
       toggle.setAttribute("aria-expanded", "false");
     });
   });
